@@ -1,0 +1,31 @@
+
+html, body  
+{  
+    padding: 0;  
+    margin: 0;  
+    height: 100%;  
+    overflow:hidden;  
+}  
+
+
+div.content{
+    background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg');
+    background-position: 10%;
+    height: 100%;
+}
+
+p.title{
+    margin: 0;
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    top: 40%;
+    bottom: 60%;
+    text-align: center;
+    width: 100%;
+}
+
+p.title:hover{
+    color: coral;
+}
+

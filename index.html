@@ -2,103 +2,18 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>JavaScript 与 HTML 的故事</title>
-    <style>
-        p {
-            color: orchid
-        }
-
-        a:visited {
-            color: tomato;
-        }
-
-        a:hover {
-            color: violet;
-        }
-    </style>
-    <script type="text/javascript" src="handler.js"></script>
+    <meta charset="utf-8">
+    <title>CoorChice</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
-    <div style="background-color: aqua;margin-top: 100px">
-        <p style="text-align: center">JavaScript 与 HTML 的故事</p>
-    </div>
-
-    <div
-        style="background-color: brown;margin-top: 100px;width:min-content;padding: 50px;border-radius: 25px 5px 50px 100px">
-        <h1 style="font-size: 20px;color: coral">这是一个区块</h1>
-        <input style="width: min-content" id="input_1">
-        <p style="margin-top: -px">这是Input下面的文字</p>
-    </div>
-
-    <div id="add" style="background-color: brown;margin-top: 1px;width: 200px;padding: 50px;box-shadow:10px 10px 5px #888888">
+    <div class="content">
+        <p class="title">CoorChice</p>
 
     </div>
 
-    <span style="box-align: left;margin-left: 12px">x</span>
-    <div
-        style="width: max-content; height:max-content;margin-top: 0px;background-color:#00000000;transition-duration: 300ms;transform: translate(-100px, 0px) translateZ(0px);">
-        <span style="color:palevioletred;float: left">y</span>
-        <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000"></canvas>
-    </div>
 
-    <script>
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        ctx.fillStyle = "#000000"
-        ctx.fillRect(0, 0, 150, 75);
-        ctx.moveTo(150, 75);
-        ctx.lineTo(200, 100);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(200, 100, 40, 0, 2 * Math.PI);
-        ctx.stroke();
-    </script>
-
-    <video src="https://chimee.org/vod/2.mp4" controls></video>
-
-    <p></p>
-
-    <video id="video1" style="margin-top: 10px" width="320" height="240" controls autoplay muted>
-        <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
-        <source src="https://www.runoob.com/try/demo_source/movie.ogg" type="video/ogg">
-        您的浏览器不支持 HTML5 video 标签。
-    </video>
-
-    <script>
-        var myVideo = document.getElementById("video1");
-        myVideo.play();
-    </script>
-
-    <br>
-
-
-    <iframe width="300px" height="300px" seamless srcdoc="
-        <html>
-        <head>
-        <style>
-        p
-        {
-         background:#000000 url('https://www.runoob.com/try/demo_source/img_tree.png' no-repeat right top);
-        }
-        </style>
-        </head>
-        <p>
-        这，就是效果！
-        </p>
-        </html>
-        ">
-    </iframe>
-
-    <a style="display: block" href="www.google.com">测试伪类啊</a>
-
-    <button style="color:blue;background:grey;border:0;margin-top: 50px;margin-bottom: 50px"
-        onclick="requestData(this)">请求数据测试</button>
-
-    <p id="resultView" style="display: block"></p>
-
-    <p id="showData" style="display: block"></p>
 </body>
 
 </html>
