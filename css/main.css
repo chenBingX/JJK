@@ -7,14 +7,6 @@ html, body
     font-size: 100%;
 }
 
-
-section {
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    color: white;
-}
-
 section.content1{
     background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg');
     background-position: center;
