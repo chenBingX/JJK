@@ -13,6 +13,7 @@ section.content1{
     height: 100%;
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
+    background-size: cover;
 }
 
 section.content2{
@@ -21,6 +22,7 @@ section.content2{
     height: 100%;
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
+    background-size: cover;
 }
 
 section.content3{
@@ -29,6 +31,7 @@ section.content3{
     height: 100%;
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
+    background-size: cover;
 }
 
 p.title{
