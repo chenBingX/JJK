@@ -20,6 +20,7 @@ section.content1{
     background-position: center;
     height: 100%;
     background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 section.content2{
@@ -27,6 +28,7 @@ section.content2{
     background-position: center;
     height: 100%;
     background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 section.content3{
@@ -34,6 +36,7 @@ section.content3{
     background-position: center;
     height: 100%;
     background-attachment: fixed;
+    -webkit-background-attachment: fixed;
 }
 
 p.title{
