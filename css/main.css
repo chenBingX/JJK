@@ -14,6 +14,7 @@ section.content1{
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
     background-size: cover;
+    -webkit-background-size: cover;
 }
 
 section.content2{
@@ -23,6 +24,7 @@ section.content2{
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
     background-size: cover;
+    -webkit-background-size: cover;
 }
 
 section.content3{
@@ -32,6 +34,7 @@ section.content3{
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
     background-size: cover;
+    -webkit-background-size: cover;
 }
 
 p.title{
