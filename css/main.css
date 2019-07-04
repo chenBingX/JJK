@@ -4,28 +4,57 @@ html, body
     padding: 0;  
     margin: 0;  
     height: 100%;  
-    overflow:hidden;  
-}  
+    font-size: 100%;
+}
 
 
-div.content{
-    background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg');
-    background-position: 10%;
+section {
     height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: white;
+}
+
+section.content1{
+    background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg');
+    background-position: center;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+section.content2{
+    background-image: url('https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=');
+    background-position: center;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+section.content3{
+    background-image: url('http://up.enterdesk.com/edpic_source/21/00/00/210000f8e772d7fc0758e67ae4b48807.jpg');
+    background-position: center;
+    height: 100%;
+    background-attachment: fixed;
 }
 
 p.title{
     margin: 0;
     color: white;
-    font-size: 2em;
-    position: absolute;
+    font-size: 5em;
+    position: relative;
     top: 40%;
     bottom: 60%;
     text-align: center;
     width: 100%;
+    transition: font-size 500ms;
+}
+
+@keyframes titleHoverAnim{
+    to{
+        font-size: 6em;
+    }
 }
 
 p.title:hover{
-    color: coral;
+    font-size: 5.5em;
 }
 
