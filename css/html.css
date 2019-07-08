@@ -1,0 +1,39 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    /* background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg'); */
+    height: 100%;
+    background-attachment: fixed;
+}
+
+p {
+    color: coral;
+}
+
+code {
+    color: black;
+    background: burlywood;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 10dp;
+    margin-bottom: 10dp;
+    white-space: nowrap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    color: #000;
+}
