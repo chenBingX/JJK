@@ -16,16 +16,20 @@ p {
     color: coral;
 }
 
-code {
+pre {
     color: black;
     background: burlywood;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 12px;
     padding-right: 12px;
-    margin-top: 10dp;
-    margin-bottom: 10dp;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    margin-right: 2.5%;
     white-space: nowrap;
+    overflow: auto;
+    width: 93%;
 }
 
 h1,
@@ -36,4 +40,8 @@ h5,
 h6,
 h7 {
     color: #000;
+}
+
+img {
+    max-width: 100%;
 }

@@ -1,8 +1,9 @@
 function test() {
     $.get("https://raw.githubusercontent.com/chenBingX/CoorChiceArticale/master/SuperTextView%E6%96%87%E6%A1%A3/Github%E7%89%88%E6%9C%AC-%E4%B8%AD%E6%96%87.md", function(data, status) {
         if (status == "success") {
-            var md = data.responseText;
-            let html_content = markdown.toHTML(data);
+            let md = data.responseText;
+            // let html_content = markdown.toHTML(data);
+            let html_content = marked(data);
             console.log(html_content);
             let html = "<!DOCTYPE html>" +
                 "<html>" +
@@ -17,9 +18,5 @@ function test() {
                 "</html>";
             document.write(html);
         }
-        // var md = data.responseText;
-        // console.log("status = " + status);
-        // console.log(data);
-        // console.log(markdown.toHTML(md));
     });
 }
