@@ -1,0 +1,115 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    /* background: rgba(253, 246, 228, 1); */
+    background: white;
+    /* background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg'); */
+    height: 100%;
+    background-attachment: fixed;
+}
+
+article.article_pre {
+    margin: 12px;
+}
+
+p,
+li {
+    color: rgba(102, 123, 131, 1);
+}
+
+code {
+    background: rgba(102, 123, 131, 0.15);
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+    border-radius: 2px;
+}
+
+pre {
+    background: none;
+    border-style: solid;
+    border-color: rgba(102, 123, 131, 1);
+    border-width: 1px;
+    border-radius: 5px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    margin-right: 2.5%;
+    white-space: pre-wrap;
+    overflow: auto;
+    width: 93%;
+    box-shadow: 2px 2px 2px 2px rgba(102, 123, 131, 0.15);
+}
+
+h1 {
+    color: rgba(198, 27, 111, 1);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    color: rgba(114, 138, 4, 1);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    box-shadow: 2px 2px 2px 2px rgba(102, 123, 131, 0.15);
+}
+
+a img {
+    display: inline;
+    box-shadow: 0 0 rgba(102, 123, 131, 0);
+}
+
+a {
+    color: #2d70d9;
+}
+
+blockquote {
+    background: #f7f7f7;
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #b4b4b4;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 0;
+}
+
+
+/* 
+* 表格配置
+*/
+
+table {
+    /* 单元格间距 */
+    border-spacing: 0;
+    /* 单元格重叠边框，只算一边 */
+    border-collapse: collapse;
+}
+
+thead th {
+    margin: 0;
+    background: rgba(102, 123, 131, 0.2);
+    color: rgba(105, 125, 133, 1);
+    border: 1px solid rgba(199, 202, 193, 1);
+}
+
+tbody td {
+    margin: 0;
+    border: 1px solid rgba(199, 202, 193, 1);
+}
