@@ -5,10 +5,16 @@
     <meta charset="utf-8">
     <title>CoorChice</title>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-    <!-- <script src="https://cdn.bootcss.com/markdown.js/0.5.0/markdown.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/highlight_1.css">
+
+    <!-- <script type="text/javascript" src="js/artical.js"></script>
+    <script type="text/javascript" src="js/highlight.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> -->
 </head>
 
 <body>
@@ -19,8 +25,31 @@
         <p class="title">CoorChice</p>
     </section>
     <section class="content3">
-        <p class="title" onclick="test()">CoorChice</p>
+        <p class="title" onclick="goToArticalPage('https://raw.githubusercontent.com/chenBingX/CoorChiceArticale/master/SuperTextView%E6%96%87%E6%A1%A3/Github%E7%89%88%E6%9C%AC-%E4%B8%AD%E6%96%87.md')">CoorChice</p>
     </section>
+
+    <!-- <pre>
+        <code>
+        public class MyAdjuster extends SuperTextView.Adjuster{
+
+            @Override
+            protected void adjust(SuperTextView superTextView, Canvas canvas) {
+        
+            }
+        
+            @Override
+            public void onAttach(SuperTextView stv) {
+              // 当 Adjuster 被加入一个 SuperTextView 时会被调用
+            }
+        
+            @Override
+            public void onDetach(SuperTextView stv) {
+              // 当 Adjuster 被从 SuperTextView 移除时会被调用
+            }
+        }
+        </code>
+    </pre> -->
+
 </body>
 
 </html>
