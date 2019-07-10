@@ -11,6 +11,11 @@ function getArticles2(url) {
     $.get(url, function(data, status) {
         if (status == "success" && data != null) {
             console.log("articles = " + JSON.stringify(data));
+            for (const article in data) {
+                let a = $("<a></a>").attr("href", "article.html?article_url=" + article.download_url).text(article.name);
+                console.log(a);
+                $("section.content2").append(a);
+            }
         }
     });
 }
