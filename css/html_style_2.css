@@ -11,32 +11,40 @@ body {
     background: white;
     /* background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg'); */
     height: 100%;
+    width: 100%;
     background-attachment: fixed;
 }
 
 article.article_pre {
     margin: 12px;
+    /* width: 780px; */
+    width: calc(100vw - 610px);
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 
-p,
+article p,
 li {
     color: rgba(102, 123, 131, 1);
 }
 
 code {
-    background: rgba(102, 123, 131, 0.15);
-    padding-left: 3px;
-    padding-right: 3px;
+    color: rgba(207, 37, 80, 1);
+    background: rgba(246, 246, 246, 0.9);
+    padding-left: 5px;
+    padding-right: 5px;
     padding-bottom: 2px;
     border-radius: 2px;
 }
 
 pre {
     background: none;
-    border-style: solid;
+    /* border-style: solid;
     border-color: rgba(102, 123, 131, 1);
     border-width: 1px;
-    border-radius: 5px;
+    border-radius: 5px; */
     color: black;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -45,11 +53,17 @@ pre {
     white-space: pre-wrap;
     overflow: auto;
     width: 93%;
-    box-shadow: 2px 2px 2px 2px rgba(102, 123, 131, 0.15);
+    box-shadow: 0px 4px 8px 0px rgba(102, 123, 131, 0.15);
 }
 
 h1 {
-    color: rgba(198, 27, 111, 1);
+    color: rgba(0, 0, 0, 1);
+    border-left: rgba(255, 123, 123, 1);
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-top-left-radius: 2.5px;
+    border-bottom-left-radius: 2.5px;
+    padding-left: 0.5em;
 }
 
 h2,
@@ -58,7 +72,7 @@ h4,
 h5,
 h6,
 h7 {
-    color: rgba(114, 138, 4, 1);
+    color: rgba(0, 0, 0, 1);
 }
 
 img {
@@ -68,7 +82,7 @@ img {
     margin-right: auto;
     margin-top: 9px;
     margin-bottom: 9px;
-    box-shadow: 2px 2px 2px 2px rgba(102, 123, 131, 0.15);
+    box-shadow: 0px 4px 8px 0px rgba(102, 123, 131, 0.15);
 }
 
 a img {
@@ -78,6 +92,7 @@ a img {
 
 a {
     color: #2d70d9;
+    text-decoration: none;
 }
 
 blockquote {
@@ -113,3 +128,173 @@ tbody td {
     margin: 0;
     border: 1px solid rgba(199, 202, 193, 1);
 }
+
+
+/**
+* footer 配置
+*/
+
+footer {
+    width: 780px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer p {
+    text-align: center;
+    color: rgba(161, 161, 161, 1);
+}
+
+
+/**
+* 代码块风格
+*/
+
+.hljs {
+    display: block;
+    padding: .5em;
+    background: rgba(39, 43, 51, 1);
+    border-radius: 3px;
+}
+
+.hljs,
+.hljs-tag,
+.css .hljs-rules,
+.css .hljs-value,
+.css .hljs-function .hljs-preprocessor,
+.hljs-pragma {
+    color: #f8f8f2
+}
+
+.hljs-strongemphasis,
+.hljs-strong,
+.hljs-emphasis {
+    color: #a8a8a2
+}
+
+.hljs-bullet,
+.hljs-blockquote,
+.hljs-horizontal_rule,
+.hljs-number,
+.hljs-regexp,
+.alias .hljs-keyword,
+.hljs-literal,
+.hljs-hexcolor {
+    color: #ae81ff
+}
+
+.hljs-tag .hljs-value,
+.hljs-code,
+.hljs-title,
+.css .hljs-class,
+.hljs-class .hljs-title:last-child {
+    color: #a6e22e
+}
+
+.hljs-link_url {
+    font-size: 80%
+}
+
+.hljs-strong,
+.hljs-strongemphasis {
+    font-weight: bold
+}
+
+.hljs-emphasis,
+.hljs-strongemphasis,
+.hljs-class .hljs-title:last-child {
+    font-style: italic
+}
+
+.hljs-keyword,
+.hljs-function,
+.hljs-change,
+.hljs-winutils,
+.hljs-flow,
+.lisp .hljs-title,
+.clojure .hljs-built_in,
+.nginx .hljs-title,
+.tex .hljs-special,
+.hljs-header,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.hljs-tag .hljs-title,
+.hljs-value,
+.alias .hljs-keyword:first-child,
+.css .hljs-tag,
+.css .unit,
+.css .hljs-important {
+    color: #f92672
+}
+
+.hljs-function .hljs-keyword,
+.hljs-class .hljs-keyword:first-child,
+.hljs-constant,
+.css .hljs-attribute {
+    color: #66d9ef
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-class .hljs-title {
+    color: #f8f8f2
+}
+
+.hljs-string,
+.css .hljs-id,
+.hljs-subst,
+.haskell .hljs-type,
+.ruby .hljs-class .hljs-parent,
+.hljs-built_in,
+.sql .hljs-aggregate,
+.django .hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.django .hljs-filter .hljs-argument,
+.smalltalk .hljs-localvars,
+.smalltalk .hljs-array,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-addition,
+.hljs-stream,
+.hljs-envvar,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.hljs-prompt,
+.hljs-link_label,
+.hljs-link_url {
+    color: #e6db74
+}
+
+.hljs-comment,
+.hljs-javadoc,
+.java .hljs-annotation,
+.python .hljs-decorator,
+.hljs-template_comment,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.tex .hljs-formula {
+    color: #75715e
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata,
+.xml .php,
+.php .xml {
+    opacity: .5
+}
+
+
+/*********************************************/

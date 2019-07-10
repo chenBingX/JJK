@@ -4,18 +4,22 @@ function getArticleContent() {
         $.get(url, function(data, status) {
             if (status == "success") {
                 let html_content = marked(data);
-                console.log(html_content);
                 $(".article_pre").append(html_content);
-
                 document.title = $("h1")[0].innerHTML;
-
-                // hljs.configure({ useBR: true });
-                $('pre code').each(function(i, block) {
-                    hljs.highlightBlock(block);
-                });
+                initCodeHighLight();
+                createDirectory();
             }
         });
     }
+}
+
+/**
+ * 初始化代码高亮
+ */
+function initCodeHighLight() {
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
 }
 
 /**
@@ -27,4 +31,57 @@ function getQueryString(name) {
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return decodeURI(r[2]);
     return null;
+}
+
+/**
+ * 切换主题
+ * @param {*} cssUrl 
+ */
+function changeStyle(cssUrl) {
+    $("#article_style").attr("href", cssUrl);
+}
+
+function createDirectory() {
+    // 生成目录列表
+    var toc = document.createElement("ul");
+    toc.setAttribute("id", "directory");
+    // toc.style.cssText = "border: 1px solid #ccc;" +
+    //     "width: 200px;" +
+    //     "position: fixed;" +
+    //     "white-space: pre-wrap;" +
+    //     "list-style-type:none;" +
+    //     "overflow: auto;";
+    document.body.insertBefore(toc, document.body.childNodes[0]);
+    // 用于计算当前标题层级的栈,先进先出,从左到右每一个元素代表当前标题所在的层级索引，初始为空
+    var stack = new Array();
+    // 获取所有标题
+    var headers = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    for (var i = 0; i < headers.length; i++) {
+        var header = headers[i];
+        // 计算标题级数，为后面计算标号及缩进空格准备
+        var level = parseInt(header.tagName.replace('H', ''), 10);
+        // 通过两个where循环对栈进行调整,确保stack中标题级数与当前标题级数相同
+        while (stack.length < level) {
+            stack.push(0);
+        }
+        while (stack.length > level) {
+            stack.pop();
+        }
+        // 最小一级标题标号步进+1
+        stack[stack.length - 1]++;
+        // 生成标题标号( 1.1,1.2.. )
+        var index = stack.join(".")
+            // 生成标题ID
+        var id = "title" + index;
+        header.setAttribute("id", id);
+        // 为标题加上标号,如果不希望显示标号，把下面这行注释就可以了
+        // header.textContent = index + " " + header.textContent;
+        toc.appendChild(document.createElement("li"));
+        var a = document.createElement("a");
+        // 为目录项设置链接
+        a.setAttribute("href", "#" + id)
+            // 目录项文本前面放置缩进空格
+        a.innerHTML = new Array(level * 4).join('&nbsp;') + header.textContent;
+        toc.lastChild.appendChild(a);
+    }
 }

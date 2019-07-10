@@ -1,0 +1,31 @@
+#directory {
+    background: rgba(247, 247, 247, 0.5);
+    border-radius: 6px;
+    border: 1px solid rgba(247, 247, 247, 1);
+    position: fixed;
+    white-space: pre-wrap;
+    list-style-type: none;
+    list-style-position: unset;
+    font-size: 0.5em;
+    box-sizing: border-box;
+    margin-left: 9px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    overflow-x: auto;
+    width: max-content;
+    max-width: 300px;
+    overflow-y: auto;
+    height: max-content;
+    max-height: calc(100vh - 200px);
+}
+
+#directory a {
+    margin: 0;
+    padding: 0;
+    color: black;
+    white-space: pre-wrap;
+    overflow: auto;
+    line-height: 25px;
+}

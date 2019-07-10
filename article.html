@@ -8,8 +8,10 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/html_style_1.css">
-    <link rel="stylesheet" type="text/css" href="css/highlight_1.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/highlight_1.css"> -->
+    <link id="article_style" rel="stylesheet" type="text/css" href="css/html_style_2.css">
+    <link rel="stylesheet" type="text/css" href="css/change_style.css">
+    <link rel="stylesheet" type="text/css" href="css/directory.css">
 
     <script type="text/javascript" src="js/article.js"></script>
     <script type="text/javascript" src="js/highlight.js"></script>
@@ -20,10 +22,29 @@
 </head>
 
 <body>
+    <!-- 换皮肤 -->
+    <div id="change_style">
+        <ul class="ul_change_style">
+            <div class="dropdown">
+                <a href="javascript:void(0)">主题</a>
+                <div class="dropdown-content">
+                    <a href="javascript:changeStyle('css/html_style_2.css')">夏日</a>
+                    <a href="javascript:changeStyle('css/html_style_1.css')">暖暖</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+
     <article class="article_pre">
 
     </article>
 
+    <footer>
+        <p>Posted by: <a href="https://juejin.im/user/57fc43b67db2a200595ffd94">CoorChice</a></p>
+        <p>Contact information: <a href="icechenx@egmail.com">icechenx@egmail.com</a>.</p>
+    </footer>
 </body>
+
+
 
 </html>

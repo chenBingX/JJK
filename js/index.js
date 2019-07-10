@@ -1,3 +1,21 @@
+function getArticles() {
+    let url = "https://api.github.com/repos/chenBingX/CoorChiceArticale/contents";
+    $.get(url, function(data, status) {
+        if (status == "success" && data != null) {
+            getArticles2(data[6].url);
+        }
+    });
+}
+
+function getArticles2(url) {
+    $.get(url, function(data, status) {
+        if (status == "success" && data != null) {
+            console.log("articles = " + JSON.stringify(data));
+        }
+    });
+}
+
+
 function goToArticalPage(url) {
     window.location.href = "article.html?article_url=" + url;
 }
