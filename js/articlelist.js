@@ -5,39 +5,22 @@ function getArticles(url) {
         type: "GET",
         url: url,
         cache: true,
+        async: true,
         beforeSend: function(request) {
             // request.setRequestHeader("Authorization", token);
         },
         success: function(data, status, xhr) {
-            if (status == "success" && data != null) {
+            if (status == "success" && data != null && data instanceof Array) {
+                // console.log("data = " + JSON.stringify(data));
                 data.forEach(element => {
-                    getSubarticles(element.url);
-                });
-            }
-        }
-    });
-}
-
-function getSubarticles(url) {
-    $.ajax({
-        type: "GET",
-        url: url,
-        cache: true,
-        beforeSend: function(request) {
-            // request.setRequestHeader("Authorization", token);
-        },
-        success: function(data, status, xhr) {
-            if (status == "success" && data != null) {
-                console.log("data = " + JSON.stringify(data));
-                data.forEach(element => {
-                    if (element.type == "file") {
-                        console.log("article = " + JSON.stringify(element));
-                        let a_str = "<a href='article.html?article_url=" + element.download_url + "' target='_blank'>" + element.name + "</a>";
-                        console.log(a_str);
+                    if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
+                        // console.log("article = " + JSON.stringify(element));
+                        let article_name = element.name.replace(".md", "");
+                        let a_str = "<a href='article.html?article_url=" + element.download_url + "' target='_blank'>" + article_name + "</a>";
                         let a = $(a_str);
                         $("section.content").append(a).append($("<br>"));
-                    } else if (element.type == "dir") {
-                        console.log("文件夹");
+                    } else if (element.type == "dir" && element.name.indexOf(".") == -1) {
+                        ("-------------------这是一个文件夹!-------------------");
                         getArticles(element.url);
                     }
                 });

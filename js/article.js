@@ -5,7 +5,11 @@ function getArticleContent() {
             if (status == "success") {
                 let html_content = marked(data);
                 $(".article_pre").append(html_content);
-                document.title = $("h1")[0].innerHTML;
+                if ($("h1") != null && $("h1")[0] != null) {
+                    document.title = $("h1")[0].innerHTML;
+                } else if ($("h2") != null && $("h2")[0] != null) {
+                    document.title = $("h2")[0].innerHTML;
+                }
                 initCodeHighLight();
                 createDirectory();
             }
