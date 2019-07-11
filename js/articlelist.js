@@ -1,10 +1,12 @@
+var token = "token e2d4e6c541bb41efcd1a9e6e8e06dd59a46138f2"
+
 function getArticles(url) {
     $.ajax({
         type: "GET",
         url: url,
         cache: true,
         beforeSend: function(request) {
-            request.setRequestHeader("Authorization", "token 3592734248df224971b6690fe6431add200e181b");
+            request.setRequestHeader("Authorization", token);
         },
         success: function(data, status, xhr) {
             if (status == "success" && data != null) {
@@ -22,7 +24,7 @@ function getSubarticles(url) {
         url: url,
         cache: true,
         beforeSend: function(request) {
-            request.setRequestHeader("Authorization", "token 3592734248df224971b6690fe6431add200e181b");
+            request.setRequestHeader("Authorization", token);
         },
         success: function(data, status, xhr) {
             if (status == "success" && data != null) {

@@ -99,8 +99,7 @@ blockquote {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: #b4b4b4;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding: 6px;
     margin-top: 0;
 }
 
