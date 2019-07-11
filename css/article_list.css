@@ -16,6 +16,7 @@ body {
     background-size: cover;
     -webkit-background-size: cover;
     overflow-y: auto;
+    padding: 12px;
 }
 
 p.title {
@@ -43,6 +44,15 @@ p.title:hover {
 a {
     text-decoration: none;
     font-size: 1.1em;
-    color: white;
-    line-height: 1.5em;
+    color: green;
+    line-height: 1.1em;
+    display: block;
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+a.title {
+    color: gray;
 }
