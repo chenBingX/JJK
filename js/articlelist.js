@@ -22,12 +22,16 @@ function getArticles(url, spaceCount) {
                     if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
                         // console.log("article = " + JSON.stringify(element));
                         let article_name = element.name.replace(".md", "");
-                        let a_str = "<a href='article.html?article_url=" + element.download_url + "' target='_blank'>" + space + "- " + article_name + "</a>";
+                        let a_str = "<a href='article.html?article_url=" + element.download_url + "' target='_blank'>" + space + " " + article_name + "</a>";
                         let a = $(a_str);
                         $("section.content").append(a);
                     } else if (element.type == "dir" && element.name.indexOf(".") == -1) {
                         ("-------------------这是一个文件夹!-------------------");
-                        let a_str = "<a class='title' href='javascript:void(0)'>" + space + element.name + "</a>";
+                        let titleSpace = space;
+                        if (titleSpace.indexOf("-") != 1) {
+                            titleSpace = titleSpace.replace(/-/g, "+");
+                        }
+                        let a_str = "<a class='title' href='javascript:void(0)'>" + titleSpace + " " + element.name + "</a>";
                         let a = $(a_str);
                         $("section.content").append(a);
                         getArticles(element.url, spaceCount + 1);
