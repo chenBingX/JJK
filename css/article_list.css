@@ -5,3 +5,35 @@ body {
     height: 100%;
     font-size: 100%;
 }
+
+section.content {
+    background-image: url('http://image.namedq.com/uploads/20190303/20/1551615923-aeqjFNyWcg.jpg');
+    background-position: center;
+    height: 100%;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+p.title {
+    margin: 0;
+    color: white;
+    font-size: 5em;
+    position: relative;
+    top: 40%;
+    bottom: 60%;
+    text-align: center;
+    width: 100%;
+    transition: font-size 500ms;
+}
+
+@keyframes titleHoverAnim {
+    to {
+        font-size: 6em;
+    }
+}
+
+p.title:hover {
+    font-size: 5.5em;
+}

@@ -17,7 +17,7 @@ function getArticles2(url) {
                     let a_str = "<a href='article.html?article_url=" + element.download_url + "'>" + element.name + "</a>";
                     console.log(a_str);
                     let a = $(a_str);
-                    $("section.content2").append(a).append($("<br>"));
+                    $("section.content").append(a).append($("<br>"));
                 } else if (element.type == "dir") {
                     console.log("文件夹");
                 }
