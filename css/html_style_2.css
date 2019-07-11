@@ -17,9 +17,8 @@ body {
 
 article.article_pre {
     margin: 12px;
-    /* width: 780px; */
-    width: calc(100vw - 610px);
-    max-width: 780px;
+    width: 780px;
+    max-width: 65%;
     margin-left: auto;
     margin-right: auto;
     position: relative;

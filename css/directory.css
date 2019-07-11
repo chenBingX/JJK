@@ -15,7 +15,7 @@
     padding-right: 6px;
     overflow-x: auto;
     width: max-content;
-    max-width: 300px;
+    max-width: 20%;
     overflow-y: auto;
     height: max-content;
     max-height: calc(100vh - 200px);

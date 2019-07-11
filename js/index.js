@@ -10,12 +10,18 @@ function getArticles() {
 function getArticles2(url) {
     $.get(url, function(data, status) {
         if (status == "success" && data != null) {
-            console.log("articles = " + JSON.stringify(data));
-            for (const article in data) {
-                let a = $("<a></a>").attr("href", "article.html?article_url=" + article.download_url).text(article.name);
-                console.log(a);
-                $("section.content2").append(a);
-            }
+            console.log("data = " + JSON.stringify(data));
+            data.forEach(element => {
+                if (element.type == "file") {
+                    console.log("article = " + JSON.stringify(element));
+                    let a_str = "<a href='article.html?article_url=" + element.download_url + "'>" + element.name + "</a>";
+                    console.log(a_str);
+                    let a = $(a_str);
+                    $("section.content2").append(a).append($("<br>"));
+                } else if (element.type == "dir") {
+                    console.log("文件夹");
+                }
+            });
         }
     });
 }

@@ -5,11 +5,11 @@
     background: rgba(249, 176, 150, 1);
     color: #f9f9f9;
     position: fixed;
-    right: 3em;
+    right: 8%;
     padding: 0;
     margin: 0;
     opacity: 0.3;
-    transition: 800ms;
+    transition: 500ms;
 }
 
 #change_style:hover {
