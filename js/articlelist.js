@@ -31,6 +31,12 @@ function getArticles(url, spaceCount) {
             }
         }
     });
+    $("#bottom").ajaxStart(function() {
+        $("p#bottom").text("加载数据中...");
+    });
+    $("#bottom").ajaxComplete(function(event, request, settings) {
+        $("p#bottom").text("|");
+    });
 }
 
 function goToArticalPage(url) {

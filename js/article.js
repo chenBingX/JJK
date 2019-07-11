@@ -1,19 +1,27 @@
 function getArticleContent() {
     var url = getQueryString('article_url');
+    initTitle(url);
     if (url != null) {
         $.get(url, function(data, status) {
             if (status == "success") {
+
                 let html_content = marked(data);
                 $(".article_pre").append(html_content);
-                if ($("h1") != null && $("h1")[0] != null) {
-                    document.title = $("h1")[0].innerHTML;
-                } else if ($("h2") != null && $("h2")[0] != null) {
-                    document.title = $("h2")[0].innerHTML;
-                }
+
                 initCodeHighLight();
+
                 createDirectory();
             }
         });
+    }
+}
+
+function initTitle(url) {
+    try {
+        let title = url.substring(url.lastIndexOf('/') + 1, url.length);
+        document.title = title.replace(".md", "");
+    } catch (error) {
+
     }
 }
 
