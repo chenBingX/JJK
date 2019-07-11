@@ -125,7 +125,10 @@ thead th {
 
 tbody td {
     margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
     border: 1px solid rgba(199, 202, 193, 1);
+    color: rgba(100, 123, 130, 1);
 }
 
 

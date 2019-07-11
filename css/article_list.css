@@ -6,14 +6,16 @@ body {
     font-size: 100%;
 }
 
-section.content {
-    background-image: url('http://image.namedq.com/uploads/20190303/20/1551615923-aeqjFNyWcg.jpg');
+.content {
+    background: rgba(0, 0, 0, 1);
+    /* background-image: url('http://image.namedq.com/uploads/20190303/20/1551615923-aeqjFNyWcg.jpg'); */
     background-position: center;
     height: 100%;
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
     background-size: cover;
     -webkit-background-size: cover;
+    overflow-y: auto;
 }
 
 p.title {
@@ -36,4 +38,11 @@ p.title {
 
 p.title:hover {
     font-size: 5.5em;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+    line-height: 1.5em;
 }
