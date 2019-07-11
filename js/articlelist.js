@@ -6,7 +6,7 @@ function getArticles(url) {
         url: url,
         cache: true,
         beforeSend: function(request) {
-            request.setRequestHeader("Authorization", token);
+            // request.setRequestHeader("Authorization", token);
         },
         success: function(data, status, xhr) {
             if (status == "success" && data != null) {
@@ -24,7 +24,7 @@ function getSubarticles(url) {
         url: url,
         cache: true,
         beforeSend: function(request) {
-            request.setRequestHeader("Authorization", token);
+            // request.setRequestHeader("Authorization", token);
         },
         success: function(data, status, xhr) {
             if (status == "success" && data != null) {
