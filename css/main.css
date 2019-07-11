@@ -1,13 +1,12 @@
-
-html, body  
-{  
-    padding: 0;  
-    margin: 0;  
-    height: 100%;  
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
     font-size: 100%;
 }
 
-section.content1{
+section.content {
     background-image: url('https://raw.githubusercontent.com/chenBingX/img/master/其它/background.jpg');
     background-position: center;
     height: 100%;
@@ -17,27 +16,7 @@ section.content1{
     -webkit-background-size: cover;
 }
 
-section.content2{
-    background-image: url('https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=');
-    background-position: center;
-    height: 100%;
-    background-attachment: fixed;
-    -webkit-background-attachment: fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-}
-
-section.content3{
-    background-image: url('http://up.enterdesk.com/edpic_source/21/00/00/210000f8e772d7fc0758e67ae4b48807.jpg');
-    background-position: center;
-    height: 100%;
-    background-attachment: fixed;
-    -webkit-background-attachment: fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-}
-
-p.title{
+p.title {
     margin: 0;
     color: white;
     font-size: 5em;
@@ -49,13 +28,12 @@ p.title{
     transition: font-size 500ms;
 }
 
-@keyframes titleHoverAnim{
-    to{
+@keyframes titleHoverAnim {
+    to {
         font-size: 6em;
     }
 }
 
-p.title:hover{
+p.title:hover {
     font-size: 5.5em;
 }
-

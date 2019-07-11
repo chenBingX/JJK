@@ -45,12 +45,6 @@ function createDirectory() {
     // 生成目录列表
     var toc = document.createElement("ul");
     toc.setAttribute("id", "directory");
-    // toc.style.cssText = "border: 1px solid #ccc;" +
-    //     "width: 200px;" +
-    //     "position: fixed;" +
-    //     "white-space: pre-wrap;" +
-    //     "list-style-type:none;" +
-    //     "overflow: auto;";
     document.body.insertBefore(toc, document.body.childNodes[0]);
     // 用于计算当前标题层级的栈,先进先出,从左到右每一个元素代表当前标题所在的层级索引，初始为空
     var stack = new Array();
