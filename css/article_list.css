@@ -79,7 +79,7 @@ a.title {
     }
 }
 
-#bottom:hover {
+a#bottom:hover {
     color: green;
 }
 
@@ -93,7 +93,6 @@ a#bottom {
 
 p#bottom {
     color: white;
-    animation: blinkAnim 0.9s infinite;
     text-align: center;
 }
 

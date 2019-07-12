@@ -1,15 +1,90 @@
-function getArticles(url, spaceCount) {
+var id = 0;
+
+function generateId() {
+    return ++id;
+}
+
+function startRequestArticles(url) {
+    var rootFile = new Object();
+    var ajaxBack = $.ajax;
+    var ajaxCount = 0;
+    var allAjaxDone = function() {
+        console.log("rootFile = " + JSON.stringify(rootFile));
+        if (rootFile.dirs instanceof Array) {
+            console.log("开始渲染");
+            rootFile.dirs.forEach(e => {
+                renderFile(e);
+            });
+        }
+        $("p#bottom").text("|");
+        $("p#bottom").css("animation", "blinkAnim 0.9s infinite");
+    }
+    $.ajax = function(setting) {
+        ajaxCount++;
+        var cb = setting.complete;
+        setting.complete = function() {
+            if ($.isFunction(cb)) {
+                cb.apply(setting.context, arguments);
+            }
+            ajaxCount--;
+            if (ajaxCount == 0 && $.isFunction(allAjaxDone)) {
+                allAjaxDone();
+            }
+        }
+        ajaxBack(setting);
+
+    }
+    getArticles(url, 0, rootFile, generateId());
+}
+
+
+
+function renderFile(file) {
+    if (file != null) {
+        if (file.type == "file") {
+            let article_name = file.element.name.replace(".md", "");
+            let a_str = "<a href='article.html?article_url=" + file.element.download_url + "' target='_blank'>" + file.space + "~ " + article_name + "</a>";
+            let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
+            $("#list").append(a);
+        } else if (file.type == "dir") {
+            let a_str = "<a class='title' href='javascript:changeSubFileShoeState(" + file.subclass + ")'>" + file.space + file.element.name + "</a>";
+            let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
+            $("#list").append(a);
+            if (file.dirs instanceof Array) {
+                file.dirs.forEach(e => {
+                    renderFile(e);
+                });
+            }
+            if (file.articles instanceof Array) {
+                file.articles.forEach(e => {
+                    renderFile(e);
+                });
+            }
+        }
+    }
+}
+
+function changeSubFileShoeState(cla) {
+    let cur = $("." + cla).css("display");
+    if (cur == "none") {
+        $("." + cla).css("display", "inline");
+    } else {
+        $("." + cla).css("display", "none");
+    }
+}
+
+
+function getArticles(url, spaceCount, file, id) {
     $.ajax({
         type: "GET",
         url: url,
         cache: true,
-        async: false,
+        async: true,
         beforeSend: function(request) {
             // request.setRequestHeader("Authorization", token);
         },
         success: function(data, status, xhr) {
             if (status == "success" && data != null && data instanceof Array) {
-                // console.log("data = " + JSON.stringify(data));
                 let space = "";
                 for (let i = 0; i < spaceCount; i++) {
                     space += "&nbsp;&nbsp;&nbsp;";
@@ -17,25 +92,21 @@ function getArticles(url, spaceCount) {
                 console.log("space = " + space + "!");
                 data.forEach(element => {
                     if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
-                        let article_name = element.name.replace(".md", "");
-                        let a_str = "<a href='article.html?article_url=" + element.download_url + "' target='_blank'>" + space + "~ " + article_name + "</a>";
-                        let a = $("<li>" + a_str + "</li>");
-                        $("#list").append(a);
+                        if (file.articles == null) {
+                            file.articles = new Array();
+                        }
+                        file.articles.push({ element: element, class: (file.class == null ? ("" + id) : (file.class + " " + id)), type: "file", space: space });
                     } else if (element.type == "dir" && element.name.indexOf(".") == -1) {
-                        let a_str = "<a class='title' href='javascript:void(0)'>" + space + element.name + "</a>";
-                        let a = $("<li>" + a_str + "</li>");
-                        $("#list").append(a);
-                        getArticles(element.url, spaceCount + 1);
+                        if (file.dirs == null) {
+                            file.dirs = new Array();
+                        }
+                        let subFile = { element: element, class: (file.class == null ? ("" + id) : (file.class + " " + id)), subclass: "" + generateId(), type: "dir", space: space };
+                        file.dirs.push(subFile);
+                        getArticles(element.url, spaceCount + 1, subFile, subFile.subclass);
                     }
                 });
             }
         }
-    });
-    $("#bottom").ajaxStart(function() {
-        $("p#bottom").text("加载数据中...");
-    });
-    $("#bottom").ajaxComplete(function(event, request, settings) {
-        $("p#bottom").text("|");
     });
 }
 
