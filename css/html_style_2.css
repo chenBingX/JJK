@@ -30,6 +30,7 @@ li {
 }
 
 article p {
+    margin-left: 6px;
     white-space: pre-wrap;
 }
 

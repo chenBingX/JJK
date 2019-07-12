@@ -7,13 +7,16 @@ body {
 }
 
 section.content {
-    background-image: url('../res/img/background1.jpg');
+    background: black;
+    background-image: url('../res/img/background3.jpg');
     background-position: center;
     height: 100%;
     background-attachment: fixed;
-    -webkit-background-attachment: fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
+    /* -webkit-background-attachment: fixed; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* -webkit-background-size: cover; */
+    animation: bgAnim 5s alternate infinite;
 }
 
 p.title {
@@ -26,6 +29,15 @@ p.title {
     text-align: center;
     width: 100%;
     transition: font-size 500ms;
+}
+
+@keyframes bgAnim {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 0.8;
+    }
 }
 
 @keyframes titleHoverAnim {

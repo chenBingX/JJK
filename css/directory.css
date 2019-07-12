@@ -3,7 +3,7 @@
     border-radius: 6px;
     border: 1px solid rgba(247, 247, 247, 1);
     position: fixed;
-    white-space: pre-wrap;
+    white-space: nowrap;
     list-style-type: none;
     list-style-position: unset;
     font-size: 0.5em;
@@ -18,14 +18,27 @@
     max-width: 15%;
     overflow-y: auto;
     height: max-content;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100% - 200px);
+    scrollbar-width: 1px;
+    opacity: 0.1;
+    transition: 800ms;
+}
+
+#directory:hover {
+    opacity: 1;
 }
 
 #directory a {
     margin: 0;
     padding: 0;
-    color: black;
-    white-space: pre-wrap;
-    overflow: auto;
+    color: grey;
     line-height: 25px;
+}
+
+#directory a:hover {
+    color: black;
+}
+
+#directory li {
+    display: block;
 }

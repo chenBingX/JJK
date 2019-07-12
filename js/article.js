@@ -2,15 +2,17 @@ function getArticleContent() {
     var url = getQueryString('article_url');
     if (url != null) {
         initTitle(url);
+        $("footer").css("display", "none");
         $.get(url, function(data, status) {
             if (status == "success") {
-
                 let html_content = marked(data);
                 $(".article_pre").append(html_content);
 
                 initCodeHighLight();
 
                 createDirectory();
+
+                $("footer").css("display", "block");
             }
         });
     }

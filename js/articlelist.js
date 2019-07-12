@@ -9,9 +9,8 @@ function startRequestArticles(url) {
     var ajaxBack = $.ajax;
     var ajaxCount = 0;
     var allAjaxDone = function() {
-        console.log("rootFile = " + JSON.stringify(rootFile));
+        // console.log("rootFile = " + JSON.stringify(rootFile));
         if (rootFile.dirs instanceof Array) {
-            console.log("开始渲染");
             rootFile.dirs.forEach(e => {
                 renderFile(e);
             });
@@ -47,7 +46,7 @@ function renderFile(file) {
             let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
             $("#list").append(a);
         } else if (file.type == "dir") {
-            let a_str = "<a class='title' href='javascript:changeSubFileShoeState(" + file.subclass + ")'>" + file.space + file.element.name + "</a>";
+            let a_str = "<a class='title' href='javascript:void(0)' onclick='changeSubFileShoeState(this, " + file.subclass + ")'>" + file.space + "- " + file.element.name + "</a>";
             let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
             $("#list").append(a);
             if (file.dirs instanceof Array) {
@@ -64,12 +63,19 @@ function renderFile(file) {
     }
 }
 
-function changeSubFileShoeState(cla) {
+function changeSubFileShoeState(ele, cla) {
     let cur = $("." + cla).css("display");
     if (cur == "none") {
         $("." + cla).css("display", "inline");
+        $('.' + cla + ' [class = "title"]').each(function() {
+            if ($(this).text().indexOf("+") != -1) {
+                $(this).text($(this).text().replace("+", "-"));
+            }
+        });
+        $(ele).text($(ele).text().replace("+", "-"));
     } else {
         $("." + cla).css("display", "none");
+        $(ele).text($(ele).text().replace("-", "+"));
     }
 }
 
@@ -89,7 +95,7 @@ function getArticles(url, spaceCount, file, id) {
                 for (let i = 0; i < spaceCount; i++) {
                     space += "&nbsp;&nbsp;&nbsp;";
                 }
-                console.log("space = " + space + "!");
+                // console.log("space = " + space + "!");
                 data.forEach(element => {
                     if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
                         if (file.articles == null) {

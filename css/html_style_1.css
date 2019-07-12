@@ -27,8 +27,9 @@ li {
     color: rgba(102, 123, 131, 1);
 }
 
-article p{
-    white-space:pre-wrap;
+article p {
+    margin-left: 6px;
+    white-space: pre-wrap;
 }
 
 code {
