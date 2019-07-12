@@ -6,6 +6,8 @@
     <title></title>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/article_list.css">
+
+    <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/articlelist.js"></script>
 </head>
 
@@ -32,7 +34,11 @@
 
     <script>
         window.onload = function() {
-            let url = "https://api.github.com/repos/chenBingX/CoorChiceArticale/contents";
+            let t = getQueryString("t");
+            if (t == null || t == "" || t == "null") {
+                t = "chenBingX/CoorChiceArticale";
+            }
+            let url = "https://api.github.com/repos/" + t + "/contents";
             // let url = "https://api.github.com/repos/chenBingX/CoorChiceArticale/contents/web%E5%BC%80%E5%8F%91?ref=master";
             getArticles(url, 0);
         }

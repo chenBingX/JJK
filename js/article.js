@@ -1,7 +1,7 @@
 function getArticleContent() {
     var url = getQueryString('article_url');
-    initTitle(url);
     if (url != null) {
+        initTitle(url);
         $.get(url, function(data, status) {
             if (status == "success") {
 
@@ -32,17 +32,6 @@ function initCodeHighLight() {
     $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
-}
-
-/**
- * 获取参数值
- * @param {*} name 
- */
-function getQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return decodeURI(r[2]);
-    return null;
 }
 
 /**
