@@ -1,3 +1,8 @@
+String.prototype.endWith = function(endStr) {
+    var d = this.length - endStr.length;
+    return (d >= 0 && this.lastIndexOf(endStr) == d)
+}
+
 function getArticleContent() {
     var url = getQueryString('article_url');
     if (url != null) {
@@ -5,9 +10,13 @@ function getArticleContent() {
         $("footer").css("display", "none");
         $.get(url, function(data, status) {
             if (status == "success") {
-                let html_content = marked(data);
+                let html_content = "<pre><code>" + data + "</pre></code>";
+                if (url.endsWith('.md')) {
+                    html_content = marked(data);
+                } else if (url.endsWith('.html')) {
+                    html_content = data;
+                }
                 $(".article_pre").append(html_content);
-
                 initCodeHighLight();
 
                 createDirectory();

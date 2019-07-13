@@ -4,6 +4,12 @@ function generateId() {
     return ++id;
 }
 
+
+String.prototype.endWith = function(endStr) {
+    var d = this.length - endStr.length;
+    return (d >= 0 && this.lastIndexOf(endStr) == d)
+}
+
 function startRequestArticles(url) {
     var rootFile = new Object();
     var ajaxBack = $.ajax;
@@ -42,7 +48,8 @@ function renderFile(file) {
     if (file != null) {
         if (file.type == "file") {
             let article_name = file.element.name.replace(".md", "");
-            let a_str = "<a href='article.html?article_url=" + file.element.download_url + "' target='_blank'>" + file.space + "~ " + article_name + "</a>";
+            // let a_str = "<a href='article.html?article_url=" + file.element.download_url + "' target='_blank'>" + file.space + "~ " + article_name + "</a>";
+            let a_str = "<a href='javascript:openArticlePage(" + file.element.download_url + ")'>" + file.space + "~ " + article_name + "</a>";
             let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
             $("#list").append(a);
         } else if (file.type == "dir") {
@@ -61,6 +68,25 @@ function renderFile(file) {
             }
         }
     }
+}
+
+function openArticlePage(url) {
+    if (url != null) {
+        let tUrl;
+        if (url.endWith('.jpg') ||
+            url.endWith('.png') ||
+            url.endWith('.gif') ||
+            url.endWith('.svg') ||
+            url.endWith('.webp') ||
+            url.endWith('.mp4')
+        ) {
+            tUrl = url;
+        } else {
+            tUrl = "article.html?article_url=" + url;
+        }
+        window.open(tUrl, '_blank');
+    }
+
 }
 
 function changeSubFileShoeState(ele, cla) {
@@ -97,7 +123,8 @@ function getArticles(url, spaceCount, file, id) {
                 }
                 // console.log("space = " + space + "!");
                 data.forEach(element => {
-                    if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
+                    // if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
+                    if (element.type == "file" && element.name != "README.md") {
                         if (file.articles == null) {
                             file.articles = new Array();
                         }

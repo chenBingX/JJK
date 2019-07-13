@@ -15,6 +15,7 @@ body {
     background-position: center;
     height: 70%;
     width: 60%;
+    white-space: nowrap;
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
     background-size: cover;
@@ -30,6 +31,12 @@ body {
     position: absolute;
     left: 20%;
     right: 20%;
+}
+
+.content::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    /* background: rgba(0, 0, 0, 0); */
 }
 
 p.title {
@@ -68,6 +75,10 @@ a:hover {
 
 a.title {
     color: gray;
+}
+
+a.title:hover {
+    color: rgba(231, 223, 223, 0.9)
 }
 
 @keyframes blinkAnim {

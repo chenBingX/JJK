@@ -34,12 +34,17 @@
     </section>
 
     <script>
+        let t = getQueryString("t");
+        if (t == null || t == "" || t == "null") {
+            t = "chenBingX/CoorChiceArticale";
+        }
+        try {
+            document.title = t.substring(0, t.indexOf("/")) + "的博客";
+        } catch (error) {
+
+        }
         window.onload = function() {
             setTimeout(function() {
-                let t = getQueryString("t");
-                if (t == null || t == "" || t == "null") {
-                    t = "chenBingX/CoorChiceArticale";
-                }
                 let url = "https://api.github.com/repos/" + t + "/contents";
                 startRequestArticles(url);
             }, 100);
