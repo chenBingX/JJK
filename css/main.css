@@ -1,4 +1,13 @@
-@keyframes bgAnim {
+@keyframes imgStartAnim {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes imgOpacityAnim {
     from {
         opacity: 0.1;
     }
@@ -30,7 +39,7 @@ img.background {
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
-    animation: bgAnim 5s alternate infinite;
+    animation: imgOpacityAnim 5s alternate infinite;
     /* filter: grayscale(20%); */
 }
 
