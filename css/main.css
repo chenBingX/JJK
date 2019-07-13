@@ -23,10 +23,11 @@ body {
 }
 
 img.background {
-    width: auto;
-    height: auto;
+    /* width: auto;
+    height: auto; */
     max-width: 100%;
     max-height: 100%;
+    object-fit: cover;
     margin-left: auto;
     margin-right: auto;
     animation: bgAnim 5s alternate infinite;
