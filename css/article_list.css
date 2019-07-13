@@ -3,7 +3,7 @@ body {
     padding: 0;
     margin: 0;
     height: 100%;
-    background-image: url('../res/img/background2.jpg');
+    background-image: url('../res/img/background4.jpg');
     background-attachment: fixed;
     -webkit-background-attachment: fixed;
     background-size: cover;
@@ -108,12 +108,15 @@ p#bottom {
 }
 
 #titlebar {
+    padding: 0;
+    margin: 0;
     height: 23px;
     width: 100%;
     background: rgba(53, 52, 52, 1);
     /* background: red; */
     position: fixed;
     top: 0;
+    color: #fff;
 }
 
 #titlebar img {
@@ -122,7 +125,17 @@ p#bottom {
     margin-left: -15px;
     filter: drop-shadow(30px 0 #fff);
     overflow: hidden;
-    margin-top: 4px;
+    margin-top: 0px;
+    padding-top: 4px;
+}
+
+#titlebar span {
+    padding: 0px;
+    /* display: inline-block; */
+    color: #fff;
+    font-size: 15px;
+    margin-left: 40px;
+    line-height: 0;
 }
 
 .content #header {
@@ -162,5 +175,7 @@ div.decorate {
 }
 
 #list {
+    list-style-type: none;
+    list-style-position: unset;
     margin-top: 30px;
 }

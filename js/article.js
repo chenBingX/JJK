@@ -1,8 +1,3 @@
-String.prototype.endWith = function(endStr) {
-    var d = this.length - endStr.length;
-    return (d >= 0 && this.lastIndexOf(endStr) == d)
-}
-
 function getArticleContent() {
     var url = getQueryString('article_url');
     if (url != null) {
@@ -14,13 +9,11 @@ function getArticleContent() {
                 if (url.endsWith('.md')) {
                     html_content = marked(data);
                 } else if (url.endsWith('.html')) {
-                    html_content = data;
+                    html_content = "<pre><code>" + HTMLEncode(data) + "</pre></code>"
                 }
                 $(".article_pre").append(html_content);
                 initCodeHighLight();
-
                 createDirectory();
-
                 $("footer").css("display", "block");
             }
         });
