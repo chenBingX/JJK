@@ -179,3 +179,30 @@ div.decorate {
     list-style-position: unset;
     margin-top: 30px;
 }
+
+@media screen and (max-width: 1000px) {
+    .content {
+        width: 80%;
+        left: 10%;
+        right: 10%;
+    }
+    .content #header {
+        background: rgba(53, 52, 52, 0.9);
+        position: fixed;
+        width: calc(80% - 10px);
+        /* width: 80%; */
+        /* width: 100%; */
+        /* height: 20px;
+        padding-left: 10px;
+        padding-bottom: 2px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px; */
+        /* margin-left: 1px; */
+    }
+}
+
+@media screen and (max-width: 305px) {
+    #titlebar span {
+        display: none;
+    }
+}
