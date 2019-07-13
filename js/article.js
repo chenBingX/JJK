@@ -14,6 +14,29 @@ function getArticleContent() {
                 $(".article_pre").append(html_content);
                 initCodeHighLight();
                 createDirectory();
+                // $('.article_pre p').each(function() {
+                //     let r = $(this).text();
+                //     if (r.length > 0 && r.charAt(0) == "$" && r.endsWith('$')) {
+                //         let r2 = r.replace(/\$/g, "");
+                //         let text = '';
+                //         for (let c of r2) {
+                //             if (c == '_') {
+                //                 text = text + '<sub>';
+                //             } else if (c == '^') {
+                //                 text = text + '<sup>';
+                //             } else {
+                //                 text = text + c;
+                //             }
+                //         }
+                //         let text2 = text.replace(" ", '</sub>');
+                //         console.log('text = ' + text2);
+                //         $(this).text("");
+                //         $(this).append(text2);
+                //     }
+                // });
+                // setTimeout(function() {
+                //     MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+                // }, 100);
                 $("footer").css("display", "block");
             }
         });
@@ -80,7 +103,7 @@ function createDirectory() {
         // 为目录项设置链接
         a.setAttribute("href", "#" + id)
             // 目录项文本前面放置缩进空格
-        a.innerHTML = new Array(level * 4).join('&nbsp;') + header.textContent;
+        a.innerHTML = new Array(level * 4).join('&nbsp;') + HTMLEncode(header.textContent);
         toc.lastChild.appendChild(a);
     }
 }

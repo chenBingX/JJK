@@ -1,5 +1,5 @@
 #directory {
-    background: rgba(247, 247, 247, 0.5);
+    background: rgba(247, 247, 247, 0.8);
     border-radius: 6px;
     border: 1px solid rgba(247, 247, 247, 1);
     position: fixed;
@@ -20,7 +20,7 @@
     height: max-content;
     max-height: calc(100% - 200px);
     scrollbar-width: 1px;
-    opacity: 0.25;
+    opacity: 0.3;
     transition: 800ms;
 }
 
@@ -31,6 +31,7 @@
 
 #directory:hover {
     opacity: 1;
+    background: rgba(247, 247, 247, 0.8);
 }
 
 #directory a {
