@@ -1,6 +1,3 @@
-/**
- * 添加一个底部操作面板
- */
 function addSnackbar() {
     $('head').append($('<link rel="stylesheet" type="text/css" href="css/snackbar.css">'));
 
