@@ -4,7 +4,7 @@ function addSnackbar() {
     let html = '<section class="snackbar">' +
         '<img class="arrow" src="res/img/uparrow.png">' +
         '<div class="operationPanel">' +
-        '<a class="op" href="https://github.com/chenBingX/JJK" title="支持你喜爱的 JJK 吧！😘" target="_blank"><img src="res/img/JJK_2.png"></a>' +
+        '<a class="op" href="https://github.com/chenBingX/JJK" title="支持你喜爱的 JJK 吧！😘" target="_blank"><img src="res/img/jjklogo.png"></a>' +
         '<a class="op" href="javascript:openBlogHome()" title="博客主页"><img id="userHome" src="res/img/userhome.png"></a>' +
         '<a class="op" href="javascript:share()" title="分享"><img src="res/img/share.png"></a>' +
         '</div>' +
