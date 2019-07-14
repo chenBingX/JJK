@@ -12,9 +12,11 @@ function getUserAvatar() {
 function initHover() {
     $('#snackbar').hover(
         function() {
-            $(this).addClass("snackbar_hover");
-            $('#arrow').addClass("arrow_hover");
-            $('#operationPanel').addClass("operationPanel_hover");
+            if (os.isPc) {
+                $(this).addClass("snackbar_hover");
+                $('#arrow').addClass("arrow_hover");
+                $('#operationPanel').addClass("operationPanel_hover");
+            }
         },
         function() {
             $(this).removeClass("snackbar_hover");
@@ -22,6 +24,7 @@ function initHover() {
             $('#operationPanel').removeClass("operationPanel_hover");
         }
     );
+
 }
 
 function openBlogHome() {
@@ -35,13 +38,15 @@ function share() {
 }
 
 function changeShowState() {
-    if ($('#snackbar').hasClass('snackbar_hover')) {
-        $('#snackbar').removeClass('snackbar_hover');
-        $('#arrow').removeClass('arrow_hover');
-        $('#operationPanel').removeClass("operationPanel_hover");
-    } else {
-        $('#snackbar').addClass("snackbar_hover");
-        $('#arrow').addClass("arrow_hover");
-        $('#operationPanel').addClass("operationPanel_hover");
+    if (!os.isPc) {
+        if ($('#snackbar').attr('class').indexOf('snackbar_hover') != -1) {
+            $('#snackbar').removeClass('snackbar_hover');
+            $('#arrow').removeClass('arrow_hover');
+            $('#operationPanel').removeClass("operationPanel_hover");
+        } else {
+            $('#snackbar').addClass("snackbar_hover");
+            $('#arrow').addClass("arrow_hover");
+            $('#operationPanel').addClass("operationPanel_hover");
+        }
     }
 }

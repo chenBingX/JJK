@@ -67,6 +67,7 @@ a {
     color: green;
     line-height: 1.1em;
     display: block;
+    margin-top: 10px;
 }
 
 a:hover {

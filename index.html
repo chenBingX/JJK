@@ -20,10 +20,13 @@
     </section>
 
     <script>
-        try {
-            document.title = "JJK-" + getT().substring(0, t.indexOf("/")) + "的博客";
-        } catch (error) {
+        window.onload = function() {
+            try {
+                let t = getT();
+                document.title = "JJK-" + t.substring(0, t.indexOf("/")) + "的博客";
+            } catch (error) {
 
+            }
         }
         addSnackbar();
     </script>
