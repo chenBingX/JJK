@@ -103,3 +103,7 @@ var os = function() {
         isPc: isPc
     }
 };
+
+function isPc() {
+    return !(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent));
+}

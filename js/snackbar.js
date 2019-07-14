@@ -1,3 +1,23 @@
+var os = function() {
+    var ua = navigator.userAgent,
+        isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+        isAndroid = /(?:Android)/.test(ua),
+        isFireFox = /(?:Firefox)/.test(ua),
+        isChrome = /(?:Chrome|CriOS)/.test(ua),
+        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        isPc = !isPhone && !isAndroid && !isSymbian;
+    console.log("os.ua = " + ua);
+    return {
+        isTablet: isTablet,
+        isPhone: isPhone,
+        isAndroid: isAndroid,
+        isPc: isPc
+    }
+};
+
+
 function getUserAvatar() {
     let = userName = getT().split("/")[0];
     let url = "https://api.github.com/users/" + userName;
@@ -12,7 +32,7 @@ function getUserAvatar() {
 function initHover() {
     $('#snackbar').hover(
         function() {
-            if (os.isPc) {
+            if (isPc()) {
                 $(this).addClass("snackbar_hover");
                 $('#arrow').addClass("arrow_hover");
                 $('#operationPanel').addClass("operationPanel_hover");
@@ -38,7 +58,7 @@ function share() {
 }
 
 function changeShowState() {
-    if (!os.isPc) {
+    if (!isPc()) {
         if ($('#snackbar').attr('class').indexOf('snackbar_hover') != -1) {
             $('#snackbar').removeClass('snackbar_hover');
             $('#arrow').removeClass('arrow_hover');
