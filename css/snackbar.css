@@ -1,0 +1,87 @@
+@keyframes sanckbarShadowAnim {
+    from {
+        box-shadow: 0px -0px 20px 5px rgba(187, 179, 109, 0.8);
+    }
+    to {
+        box-shadow: 0px -0px 20px 5px rgba(187, 179, 109, 0.1);
+    }
+}
+
+.snackbar {
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    /* bottom: -(2% - 10px); */
+    bottom: calc(35px - 10%);
+    background: rgba(255, 255, 255, 0.1);
+    transition: 800ms;
+    box-shadow: 0px -0px 20px 5px rgba(187, 179, 109, 0.8);
+    animation: sanckbarShadowAnim 3s alternate infinite;
+}
+
+.snackbar:hover {
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    animation: none;
+}
+
+@keyframes arrowAnim {
+    from {
+        transform: translateY(-2px);
+    }
+    to {
+        transform: translateY(2px);
+    }
+}
+
+.arrow {
+    height: 35px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: scale-down;
+    position: absolute;
+    opacity: 0.5;
+    transition: 800ms;
+    animation: arrowAnim 800ms alternate infinite;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.snackbar:hover .arrow {
+    opacity: 1;
+    transform: rotateZ(180deg);
+    animation: none;
+}
+
+.operationPanel {
+    width: 100%;
+    height: calc(100% - 35px);
+    display: flex;
+    margin: 0;
+    margin-top: 35px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+}
+
+.op {
+    /* width: 80%; */
+    height: 80%;
+    background: rgba(53, 53, 53, 0.8);
+    border-radius: 50%;
+    box-shadow: 0px 0px 32px 0px rgba(187, 179, 109, 0.5);
+    padding: 0;
+    margin: 0;
+}
+
+.op img {
+    height: 100%;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}

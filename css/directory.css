@@ -20,7 +20,7 @@
     height: max-content;
     max-height: calc(100% - 200px);
     scrollbar-width: 1px;
-    opacity: 0.3;
+    opacity: 0.5;
     transition: 800ms;
 }
 

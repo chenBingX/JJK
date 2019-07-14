@@ -15,6 +15,16 @@ function startRequestArticles(url) {
                 renderFile(e);
             });
         }
+        if (rootFile.articles instanceof Array) {
+            rootFile.articles.forEach(e => {
+                renderFile(e);
+            });
+        }
+        if (rootFile.dirs instanceof Array) {
+            rootFile.dirs.forEach(e => {
+                changeSubFileShoeState(null, e.subclass);
+            });
+        }
         $("p#bottom").text("|");
         $("p#bottom").css("animation", "blinkAnim 0.9s infinite");
     }
@@ -46,7 +56,7 @@ function renderFile(file) {
             let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
             $("#list").append(a);
         } else if (file.type == "dir") {
-            let a_str = "<a class='title' href='javascript:void(0)' onclick='changeSubFileShoeState(this, " + file.subclass + ")'>" + file.space + "- " + file.element.name + "</a>";
+            let a_str = "<a class='title' href='javascript:void(0)' onclick='changeSubFileShoeState(this, " + file.subclass + ")'>" + file.space + "+ " + file.element.name + "</a>";
             let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
             $("#list").append(a);
             if (file.dirs instanceof Array) {
@@ -75,7 +85,7 @@ function openArticlePage(url) {
         ) {
             tUrl = url;
         } else {
-            tUrl = "article.html?article_url=" + url;
+            tUrl = "article.html?article_url=" + url + "&t=" + getQueryString('t');
         }
         window.open(tUrl, '_blank');
     }
@@ -91,10 +101,14 @@ function changeSubFileShoeState(ele, cla) {
                 $(this).text($(this).text().replace("+", "-"));
             }
         });
-        $(ele).text($(ele).text().replace("+", "-"));
+        if (ele != null) {
+            $(ele).text($(ele).text().replace("+", "-"));
+        }
     } else {
         $("." + cla).css("display", "none");
-        $(ele).text($(ele).text().replace("-", "+"));
+        if (ele != null) {
+            $(ele).text($(ele).text().replace("-", "+"));
+        }
     }
 }
 
@@ -114,9 +128,7 @@ function getArticles(url, spaceCount, file, id) {
                 for (let i = 0; i < spaceCount; i++) {
                     space += "&nbsp;&nbsp;&nbsp;";
                 }
-                // console.log("space = " + space + "!");
                 data.forEach(element => {
-                    // if (element.type == "file" && element.name.indexOf(".md") != -1 && element.name != "README.md") {
                     if (element.type == "file" && element.name != "README.md") {
                         if (file.articles == null) {
                             file.articles = new Array();
