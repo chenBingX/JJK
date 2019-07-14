@@ -52,7 +52,7 @@ function renderFile(file) {
     if (file != null) {
         if (file.type == "file") {
             let article_name = file.element.name.replace(".md", "");
-            let a_str = "<a href='javascript:openArticlePage(\"" + file.element.download_url + "\")'>" + file.space + "~ " + article_name + "</a>";
+            let a_str = "<a href='javascript:void(0)' onclick='openArticlePage(event,\"" + file.element.download_url + "\")'>" + file.space + "~ " + article_name + "</a>";
             let a = $("<li class='" + file.class + "'>" + a_str + "</li>");
             $("#list").append(a);
         } else if (file.type == "dir") {
@@ -73,7 +73,7 @@ function renderFile(file) {
     }
 }
 
-function openArticlePage(url) {
+function openArticlePage(e, url) {
     if (url != null) {
         let tUrl;
         if (url.endWith('.jpg') ||
@@ -83,11 +83,24 @@ function openArticlePage(url) {
             url.endWith('.webp') ||
             url.endWith('.mp4')
         ) {
-            tUrl = url;
+            console.log("src = " + $('#imgcontent').attr("src"));
+            console.log("url = " + url);
+            if ($('#imgcontent').css("display") == "none" ||
+                $('#imgcontent').attr("src") != url) {
+                $('#img').attr("src", url);
+                // $('#imgcontent').css("margin-top", e.pageY + 20);
+                // $('#imgcontent').css("margin-left", e.pageX + 20);
+                // $('#imgcontent').css("display", "initial");
+                $('#imgcontent').css("display", "flex");
+            } else {
+                $('#imgcontent').css("display", "none");
+            }
         } else {
+            $('#imgcontent').css("display", "none");
             tUrl = "article.html?article_url=" + url + "&t=" + getQueryString('t');
+            window.open(tUrl, '_blank');
         }
-        window.open(tUrl, '_blank');
+
     }
 
 }
@@ -110,6 +123,7 @@ function changeSubFileShoeState(ele, cla) {
             $(ele).text($(ele).text().replace("-", "+"));
         }
     }
+    $('#imgcontent').css("display", "none");
 }
 
 
