@@ -14,29 +14,6 @@ function getArticleContent() {
                 $(".article_pre").append(html_content);
                 initCodeHighLight();
                 createDirectory();
-                // $('.article_pre p').each(function() {
-                //     let r = $(this).text();
-                //     if (r.length > 0 && r.charAt(0) == "$" && r.endsWith('$')) {
-                //         let r2 = r.replace(/\$/g, "");
-                //         let text = '';
-                //         for (let c of r2) {
-                //             if (c == '_') {
-                //                 text = text + '<sub>';
-                //             } else if (c == '^') {
-                //                 text = text + '<sup>';
-                //             } else {
-                //                 text = text + c;
-                //             }
-                //         }
-                //         let text2 = text.replace(" ", '</sub>');
-                //         console.log('text = ' + text2);
-                //         $(this).text("");
-                //         $(this).append(text2);
-                //     }
-                // });
-                // setTimeout(function() {
-                //     MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
-                // }, 100);
                 $("footer").css("display", "block");
             }
         });

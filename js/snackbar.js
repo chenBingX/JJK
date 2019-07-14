@@ -9,6 +9,21 @@ function getUserAvatar() {
     });
 }
 
+function initHover() {
+    $('#snackbar').hover(
+        function() {
+            $(this).addClass("snackbar_hover");
+            $('#arrow').addClass("arrow_hover");
+            $('#operationPanel').addClass("operationPanel_hover");
+        },
+        function() {
+            $(this).removeClass("snackbar_hover");
+            $('#arrow').removeClass("arrow_hover");
+            $('#operationPanel').removeClass("operationPanel_hover");
+        }
+    );
+}
+
 function openBlogHome() {
     let url = 'https://github.com/' + getT();
     gotoPageWithNewWindow(url);
@@ -17,9 +32,16 @@ function openBlogHome() {
 function share() {
     let msg = "https://chenbingx.github.io/JJK/?t=" + getT();
     let r = prompt('复制下面链接，分享你的个人专属博客链接吧 👏👏👏', msg);
-    // if (age != null) {
-    //   alert('你按了【确定】按钮！');
-    // } else {
-    //   alert('你点了【取消】按钮哦！');
-    // }
+}
+
+function changeShowState() {
+    if ($('#snackbar').hasClass('snackbar_hover')) {
+        $('#snackbar').removeClass('snackbar_hover');
+        $('#arrow').removeClass('arrow_hover');
+        $('#operationPanel').removeClass("operationPanel_hover");
+    } else {
+        $('#snackbar').addClass("snackbar_hover");
+        $('#arrow').addClass("arrow_hover");
+        $('#operationPanel').addClass("operationPanel_hover");
+    }
 }

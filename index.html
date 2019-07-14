@@ -20,6 +20,11 @@
     </section>
 
     <script>
+        try {
+            document.title = "JJK-" + getT().substring(0, t.indexOf("/")) + "的博客";
+        } catch (error) {
+
+        }
         addSnackbar();
     </script>
 

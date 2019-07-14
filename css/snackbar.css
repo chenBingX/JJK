@@ -10,18 +10,22 @@
 .snackbar {
     margin: 0;
     padding: 0;
-    height: 10%;
+    height: 12%;
     width: 100%;
     position: fixed;
     /* bottom: -(2% - 10px); */
-    bottom: calc(35px - 10%);
+    /* bottom: calc(35px - 10%); */
+    bottom: calc(5% - 12%);
     background: rgba(255, 255, 255, 0.1);
     transition: 800ms;
     box-shadow: 0px -0px 20px 5px rgba(187, 179, 109, 0.8);
     animation: sanckbarShadowAnim 3s alternate infinite;
 }
 
-.snackbar:hover {
+
+/* .snackbar:hover, */
+
+.snackbar_hover {
     bottom: 0;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: none;
@@ -38,7 +42,7 @@
 }
 
 .arrow {
-    height: 35px;
+    height: 5vh;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -52,21 +56,29 @@
     padding: 0;
 }
 
-.snackbar:hover .arrow {
+
+/* .snackbar:hover .arrow, */
+
+.arrow_hover {
     opacity: 1;
     transform: rotateZ(180deg);
     animation: none;
+    height: 3vh;
 }
 
 .operationPanel {
     width: 100%;
-    height: calc(100% - 35px);
+    height: calc(100% - 5vh);
     display: flex;
     margin: 0;
-    margin-top: 35px;
+    margin-top: 5vh;
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
+}
+
+.operationPanel_hover {
+    margin-top: 3vh;
 }
 
 .op {
@@ -77,6 +89,7 @@
     box-shadow: 0px 0px 32px 0px rgba(187, 179, 109, 0.5);
     padding: 0;
     margin: 0;
+    transition: 500ms;
 }
 
 .op img {
@@ -84,4 +97,5 @@
     border-radius: 50%;
     padding: 0;
     margin: 0;
+    transition: 500ms;
 }
