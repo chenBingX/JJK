@@ -214,7 +214,7 @@ div.decorate {
     height: 100%;
     z-index: 1;
     display: none;
-    background: rgba(28, 26, 26, 0.8);
+    background: rgba(28, 26, 26, 0.9);
     justify-content: center;
     align-content: center;
 }
