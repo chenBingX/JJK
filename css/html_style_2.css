@@ -143,7 +143,7 @@ tbody td {
 footer {
     width: 780px;
     margin-top: 80px;
-    margin-bottom: 13%;
+    /* margin-bottom: 13%; */
     margin-left: auto;
     margin-right: auto;
 }
