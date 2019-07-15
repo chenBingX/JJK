@@ -92,6 +92,10 @@
     transition: 500ms;
 }
 
+.op:hover {
+    transform: scale(1.3);
+}
+
 .op img {
     height: 100%;
     border-radius: 50%;

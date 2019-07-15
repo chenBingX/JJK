@@ -80,24 +80,50 @@ function openArticlePage(e, url) {
             url.endWith('.png') ||
             url.endWith('.gif') ||
             url.endWith('.svg') ||
-            url.endWith('.webp') ||
-            url.endWith('.mp4')
+            url.endWith('.webp')
         ) {
             console.log("src = " + $('#imgcontent').attr("src"));
             console.log("url = " + url);
             if ($('#imgcontent').css("display") == "none" ||
                 $('#imgcontent').attr("src") != url) {
                 $('#img').attr("src", url);
-                // $('#imgcontent').css("margin-top", e.pageY + 20);
-                // $('#imgcontent').css("margin-left", e.pageX + 20);
-                // $('#imgcontent').css("display", "initial");
                 $('#imgcontent').css("display", "flex");
             } else {
                 $('#imgcontent').css("display", "none");
             }
         } else {
             $('#imgcontent').css("display", "none");
-            tUrl = "article.html?article_url=" + url + "&t=" + getQueryString('t');
+            if (url.endWith('.mp4') ||
+                url.endWith('.3gp') ||
+                url.endWith('.avi') ||
+                url.endWith('.wmv') ||
+                url.endWith('.flv') ||
+                url.endWith('.mov') ||
+
+                url.endWith('.zip') ||
+                url.endWith('.rar') ||
+                url.endWith('.7z') ||
+                url.endWith('.apk') ||
+                url.endWith('.aar') ||
+                url.endWith('.awb') ||
+                url.endWith('.so') ||
+                url.endWith('.a') ||
+                url.endWith('.o') ||
+                url.endWith('.frameworke') ||
+                url.endWith('.dylib') ||
+                url.endWith('.jar') ||
+                url.endWith('.ipa') ||
+                url.endWith('.exe') ||
+                url.endWith('.sketch') ||
+                url.endWith('.pdf') ||
+                url.endWith('.dmg') ||
+                url.endWith('.xmind') ||
+                url.endWith('.class')
+            ) {
+                tUrl = url;
+            } else {
+                tUrl = "article.html?article_url=" + url + "&t=" + getQueryString('t');
+            }
             window.open(tUrl, '_blank');
         }
 
@@ -143,7 +169,7 @@ function getArticles(url, spaceCount, file, id) {
                     space += "&nbsp;&nbsp;&nbsp;";
                 }
                 data.forEach(element => {
-                    if (element.type == "file" && element.name != "README.md") {
+                    if (element.type == "file" && element.name != null && element.name.charAt(0) != ".") {
                         if (file.articles == null) {
                             file.articles = new Array();
                         }

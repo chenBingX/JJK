@@ -74,9 +74,12 @@ function HTMLDecode(text) {
  */
 String.prototype.endWith = function(endStr) {
     var d = this.length - endStr.length;
-    return (d >= 0 && this.lastIndexOf(endStr) == d)
+    return (d >= 0 && (this.toLowerCase()).lastIndexOf(endStr.toLowerCase()) == d)
 }
 
+/**
+ * 获得用户仓库名
+ */
 function getT() {
     let t = getQueryString("t");
     if (t == null || t == "" || t == "null") {
@@ -85,25 +88,9 @@ function getT() {
     return t;
 }
 
-
-var os = function() {
-    var ua = navigator.userAgent,
-        isWindowsPhone = /(?:Windows Phone)/.test(ua),
-        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
-        isAndroid = /(?:Android)/.test(ua),
-        isFireFox = /(?:Firefox)/.test(ua),
-        isChrome = /(?:Chrome|CriOS)/.test(ua),
-        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
-        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
-        isPc = !isPhone && !isAndroid && !isSymbian;
-    return {
-        isTablet: isTablet,
-        isPhone: isPhone,
-        isAndroid: isAndroid,
-        isPc: isPc
-    }
-};
-
+/**
+ * 是否是 pc 平台
+ */
 function isPc() {
     return !(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent));
 }
