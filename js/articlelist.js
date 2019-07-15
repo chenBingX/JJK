@@ -99,6 +99,14 @@ function openArticlePage(e, url) {
                 url.endWith('.wmv') ||
                 url.endWith('.flv') ||
                 url.endWith('.mov') ||
+                url.endWith('.flash') ||
+                url.endWith('.mp3') ||
+                url.endWith('.wave') ||
+                url.endWith('.MPEG') ||
+                url.endWith('.MPEG-4') ||
+                url.endWith('.WMA') ||
+                url.endWith('.VQF') ||
+                url.endWith('.OGG') ||
 
                 url.endWith('.zip') ||
                 url.endWith('.rar') ||
@@ -118,6 +126,7 @@ function openArticlePage(e, url) {
                 url.endWith('.pdf') ||
                 url.endWith('.dmg') ||
                 url.endWith('.xmind') ||
+                url.endWith('.db') ||
                 url.endWith('.class')
             ) {
                 tUrl = url;
