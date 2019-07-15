@@ -107,6 +107,12 @@ function openArticlePage(e, url) {
                 url.endWith('.WMA') ||
                 url.endWith('.VQF') ||
                 url.endWith('.OGG') ||
+                url.endWith('.m4r') ||
+                url.endWith('.flac') ||
+                url.endWith('.m4a') ||
+                url.endWith('.amr') ||
+                url.endWith('.midi') ||
+                url.endWith('.aac') ||
 
                 url.endWith('.zip') ||
                 url.endWith('.rar') ||
