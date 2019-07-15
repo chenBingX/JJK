@@ -23,6 +23,8 @@
 <video style="width: 60vw; height: 35.2vw" src="https://raw.githubusercontent.com/chenBingX/img/master/%E5%85%B6%E5%AE%83/JJK%E6%BC%94%E7%A4%BA.mov" controls></video>
 </div>
 
+> 提示💡：看不到视频可以 [**点击此处**](https://raw.githubusercontent.com/chenBingX/img/master/%E5%85%B6%E5%AE%83/JJK%E6%BC%94%E7%A4%BA.mov) 查看视频。
+
 现在，该有所了解了吧？
 
 # JJK 带来了什么改变？
@@ -119,6 +121,10 @@ JJK 充分关注于你，属于你的专属细节将无处不在！
 JJk 需要你的支持 😘😘😘：
 
 ### [Github 项目地址：https://github.com/chenBingX/JJK](https://github.com/chenBingX/JJK)
+
+**star** 起来，解锁未来更多的惊喜！
+
+![](https://raw.githubusercontent.com/chenBingX/img/master/%E6%9A%B4%E6%BC%AB/u%3D3171595335%2C884327306%26fm%3D26%26gp%3D0.jpg)
 
 
 
