@@ -23,7 +23,7 @@
 <video style="width: 60vw; height: 35.2vw" src="https://raw.githubusercontent.com/chenBingX/img/master/%E5%85%B6%E5%AE%83/JJK%E6%BC%94%E7%A4%BA.mov" controls></video>
 </div>
 
-> 提示💡：看不到视频可以 [**点击此处**](https://raw.githubusercontent.com/chenBingX/img/master/%E5%85%B6%E5%AE%83/JJK%E6%BC%94%E7%A4%BA.mov) 查看视频。
+> 提示💡：看不到视频可以 [**点击此处**](https://chenbingx.github.io/JJK/article.html?article_url=https://raw.githubusercontent.com/chenBingX/JJK/master/README.md&t=chenBingX/JJK) 查看视频。
 
 现在，该有所了解了吧？
 
