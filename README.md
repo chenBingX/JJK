@@ -1,4 +1,7 @@
 
+<script>
+    document.title="来，认识一下 JJK";
+</script>
 
 # 来，认识一下 JJK
 
