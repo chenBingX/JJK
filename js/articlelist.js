@@ -134,6 +134,9 @@ function openArticlePage(e, url) {
                 url.endWith('.dmg') ||
                 url.endWith('.xmind') ||
                 url.endWith('.db') ||
+                url.endWith('.psd') ||
+                url.endWith('.bmpr') ||
+                url.endWith('.bmml') ||
                 url.endWith('.class')
             ) {
                 tUrl = url;
