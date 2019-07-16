@@ -77,6 +77,7 @@ function openArticlePage(e, url) {
     if (url != null) {
         let tUrl;
         if (url.endWith('.jpg') ||
+            url.endWith('.jpeg') ||
             url.endWith('.png') ||
             url.endWith('.gif') ||
             url.endWith('.svg') ||
